@@ -1,5 +1,5 @@
 /* See https://github.com/mattjs/js-libraries for license */
-var FormObject = function(form) {
+function FormObject(form) {
 	var _this = this;
 	// PUBLIC INTERFACE
 	this.action;
@@ -38,12 +38,12 @@ var FormObject = function(form) {
 					value: elements[i].value
 				});
 			} else {
-				this.data[elements[i].name] = elements[i].value;
+				_this.data[elements[i].name] = elements[i].value;
 			}
 		}
 		
 		for(var name in sorted) {
-			this.data[name] = _buld_from_object(sorted[name]);
+			_this.data[name] = _buld_from_object(sorted[name]);
 		}
 	}
 	
@@ -84,8 +84,8 @@ var FormObject = function(form) {
 	}
 	
 	var get_action = function() {
-		this.action = form.hasAttribute('action')?form.getAttribute('action'):null;
-		this.api_action = form.hasAttribute('data-api-action')?form.getAttribute('data-api-action'):null;
+		_this.action = form.hasAttribute('action')?form.getAttribute('action'):null;
+		_this.api_action = form.hasAttribute('data-api-action')?form.getAttribute('data-api-action'):null;
 	}
 	
 	var init = function() {
