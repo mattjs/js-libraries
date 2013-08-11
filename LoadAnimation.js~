@@ -1,6 +1,6 @@
 /**
  * See https://github.com/mattjs/js-libraries for license
- * Requires: https://github.com/fgnass/spin.js
+ *
  */
 ;(function(context, undefined) {
 	'use strict';
