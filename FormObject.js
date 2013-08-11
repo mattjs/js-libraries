@@ -6,7 +6,6 @@ var FormObject = function(form) {
 	this.data = {};
 	
 	var elements = [];
-	//var form_array_re = /^\[(\w*)\]([\w\[\]]*)$/;
 	
 	var get_form_elements = function() {
 		for(var i in form.elements) {
@@ -84,8 +83,8 @@ var FormObject = function(form) {
 	}
 	
 	var get_action = function() {
-		this.action = form.getAttribute('action');
-		this.api_action = form.getAttribute('data-api-action');
+		this.action = form.hasAttribute('action')?form.getAttribute('action'):null;
+		this.api_action = form.hasAttribute('data-api-action')?form.getAttribute('data-api-action'):null;
 	}
 	
 	var init = function() {
