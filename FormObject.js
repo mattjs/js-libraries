@@ -14,10 +14,17 @@ function FormObject(form) {
 			&& 'name' in form.elements[i]
 			&& form.elements[i]['name']
 			&& 'value' in form.elements[i]) {
-				elements.push({
-					name: form.elements[i]['name'],
-					value: form.elements[i]['value']
-				});
+				if(form.elements[i].type == 'checkbox') {
+					elements.push({
+						name: form.elements[i]['name'],
+						value: form.elements[i]['checked']
+					});
+				} else {
+					elements.push({
+						name: form.elements[i]['name'],
+						value: form.elements[i]['value']
+					});
+				}
 			}
 		}
 	}
